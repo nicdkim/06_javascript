@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        버튼 3개를 만들어서
+        1번을 누르면 안녕하세요가 빨간색으로
+        2번을 누르면 안녕하세요가 hi로
+        3번을 누르면 hi 라는 alert 출력 
+     -->
+
+    <h1 id="message">안녕하세요</h1>
+
+    <button onclick="changeColor()">1번</button>
+    <button onclick="sayHiEn()">2번</button>
+    <button onclick="sayHiAlert()">3번</button>
+    
+    <script>
+
+        let isRed = false;
+        let isHi = false;
+
+        function changeColor() {
+            const $message = document.getElementById("message");
+            if(isRed) {
+                $message.style.color = "white";
+            }else {
+                $message.style.color = "red";
+            }
+            isRed = !isRed;
+        }
+
+        function sayHiEn() {
+            const $message = document.getElementById("message");
+            if(isHi) {
+                $message.textContent = "안녕하세요";
+            } else {
+                $message.textContent = "hi";
+            }
+            isHi = !isHi;
+        }
+
+        function sayHiAlert() {
+            alert("hi");
+        }
+    </script>
+    
+</body>
+</html>
